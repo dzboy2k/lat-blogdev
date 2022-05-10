@@ -230,3 +230,10 @@ http://localhost:3000/login
 http://localhost:3000/login/123
   {page: 'login', slug: '123'}
 ```
+
+### 07 - Redux Header 
+```
+redux devtools chrome
+bootstrap 5
+Navbar
+```
