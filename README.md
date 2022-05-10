@@ -196,3 +196,37 @@ http://localhost:5000/api/refresh_token GET => Cookies
 http://localhost:5000/api/logout GET
 http://localhost:5000/api/refresh_token GET
 ```
+
+### 06 - Setup Client
+```
+cmd
+  cd client
+  npm i react-router-dom axios redux redux-thunk react-redux redux-devtools-extension
+delete 
+  App.css 
+  App.test.tsx 
+  logo.svg 
+  reportWebVitals.ts 
+  setupTests.ts
+App.tsx
+  rafce -> tab 
+
+Visual Studio Code
+  React snippets extension (ES7+ React/Redux/React-Native snippets)
+
+bootstrap 5 => CSS (public -> index.html)
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+cmd 
+  npm i --save-dev @types/react-router-dom
+
+http://localhost:3000
+  {}
+http://localhost:3000/login
+  {page: 'login'}
+http://localhost:3000/login/123
+  {page: 'login', slug: '123'}
+```
