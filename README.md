@@ -111,3 +111,48 @@ tsconfig.json
     "server/**/*"
   ]
 ```
+
+### 03 - Send Mail
+```
+cmd
+  npm i nodemailer google-auth-library
+  npm i -D @types/nodemailer
+  npm uninstall @types/bcrypt @types/jsonwebtoken
+  npm i -D  @types/bcrypt @types/jsonwebtoken
+
+google console
+  https://console.cloud.google.com/ => New Project:
+    Project name: blog-devat
+    Location: No organization
+  => Create
+  APIs & Services => Credentials =>  Create credentials => OAuth client ID
+    => Configure consent screen => Create
+
+    OAuth consent screen:
+      App name: blogdev
+      User support email: ...
+      Developer contact information: ...
+    => Save and Continue x2
+    => Add Users => Save and Continue => Back to Dashboard
+
+    Credentials => OAuth client ID:
+      Application type: Web application 
+      Name: BlogDev
+      Authorized JavaScript origins => Add URI: http://localhost:3000
+      Authorized redirect URIs => Add URI: https://developers.google.com/oauthplayground
+      => Create
+
+    https://developers.google.com/oauthplayground/
+      => Use your own OAuth credentials
+        OAuth Client ID
+        OAuth Client secret
+      Input your own scopes: http://mail.google.com => Authorize APIs
+      => Exchange authorization code for tokens => Refresh token
+
+Postman
+  {
+    "name": "DevAT",
+    "account": "dzboy2k50@gmail.com",
+    "password": "123456"
+  }
+```
