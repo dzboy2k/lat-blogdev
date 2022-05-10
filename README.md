@@ -183,3 +183,16 @@ POSTMAN
   "password": "123"
 }
 ```
+
+### 05 - Login/Logout
+```
+http://localhost:5000/api/login POST
+  {
+    "account": "dzboy2k@gmail.com",
+    "password": "123456"
+  }
+
+http://localhost:5000/api/refresh_token GET => Cookies
+http://localhost:5000/api/logout GET
+http://localhost:5000/api/refresh_token GET
+```
