@@ -62,3 +62,52 @@ https://www.mongodb.com/
   Database => Connect => Connect your application 
     => mongodb+srv://devat:devat123...mongodb.net/blogdev?retryWrites
 ```
+
+### 02 - Register
+```
+cmd
+  npm i bcrypt jsonwebtoken
+  npm i @types/bcrypt @types/jsonwebtoken
+
+Postman 
+http://localhost:5000/api/register POST
+  body -> raw -> json
+
+  {
+    "name": "DevAT",
+    "account": "user01@gmail.com",
+    "password": "123456"
+  }
+
+regex email js
+  {
+    "name": "DevAT",
+    "account": "user01@gmail.com",
+    "password": "1234"
+  }
+
+  {
+    "name": "DevAT",
+    "account": "user01@",
+    "password": "123456"
+  }
+
+  {
+    "name": "DevAT",
+    "account": "+84374481936",
+    "password": "123456"
+  }
+
+  {
+    "name": "",
+    "account": "+84374481936",
+    "password": "123456"
+  }
+
+jwt - https://jwt.io/ (Encoded)
+
+tsconfig.json
+  "include": [
+    "server/**/*"
+  ]
+```
