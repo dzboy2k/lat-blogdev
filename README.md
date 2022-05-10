@@ -156,3 +156,30 @@ Postman
     "password": "123456"
   }
 ```
+
+### 04 - Send SMS
+```
+twilio.com => Console => API documentation => SMS => Node.js Quickstart
+npm install twilio
+Postman
+  http://localhost:5000/api/register POST
+    {
+      "name": "DevAT",
+      "account": "dzboy2k@gmail.com",
+      "password": "123456"
+    }
+mail.google.com => token
+  http://localhost:5000/api/active POST
+  {
+    active_token: "..."
+  }
+mongodb.com => Database => Browse Collections 
+
+POSTMAN
+
+{
+  "name": "",
+  "account": "dzboy2k@gmail.com",
+  "password": "123"
+}
+```
