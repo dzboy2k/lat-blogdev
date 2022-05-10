@@ -1,6 +1,6 @@
 ## Blog Dev
 
-### 01 - Setup
+### 01 - Setup - P1
 ```
 cmd
   npm init -y
@@ -36,4 +36,29 @@ Xóa folder dist
 
 cmd
  npm run dev
+```
+
+### 01 - Setup - P2
+```
+https://www.mongodb.com/
+  Sign in
+  Project - New Project
+    Name Your Project: blogdev
+    => Create Project
+    => Build a Database
+  Create a Shared Cluster => Create Cluster
+  
+  Database Access => Database Users => Add New Database User
+  => Password
+  devat
+  devat123
+    => Add User
+
+  Network Access => Add IP Address => Allow Access from Anywhere => Confirm
+
+cmd
+  npx create-react-app client --template typescript
+https://www.mongodb.com/
+  Database => Connect => Connect your application 
+    => mongodb+srv://devat:devat123...mongodb.net/blogdev?retryWrites
 ```
