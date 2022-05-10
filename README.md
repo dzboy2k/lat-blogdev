@@ -250,3 +250,9 @@ client/package.json
 
 npm install react-scripts@4.0.3 --save
 ```
+
+### 10 - Loading - Error - Success
+ ```
+ bootstrap 5
+ toasts
+ ```
