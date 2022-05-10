@@ -242,3 +242,11 @@ Navbar
 ```
 form control (bootstrap 5)
 ```
+
+### 09 - React_Login #2
+```
+client/package.json
+  "proxy": "http://localhost:5000",
+
+npm install react-scripts@4.0.3 --save
+```

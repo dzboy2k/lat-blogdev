@@ -74,7 +74,7 @@ const authCtrl = {
       const { account, password } = req.body
 
       const user = await Users.findOne({account})
-      if(!user) return res.status(500).json({msg: 'This account does not exists.'})
+      if(!user) return res.status(400).json({msg: 'This account does not exists.'})
 
       // if user exists
       loginUser(user, password, res)
