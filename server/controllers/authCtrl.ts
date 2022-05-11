@@ -36,8 +36,8 @@ const authCtrl = {
         return res.json({msg: 'Success! Please check phone.'})
       }
       
-    } catch (err) {
-      return res.status(500).json({msg: (err as any).message})
+    } catch (err: any) {
+      return res.status(500).json({msg: err.message})
     }
   },
   activeAccount: async(req: Request, res: Response) => {
@@ -50,23 +50,17 @@ const authCtrl = {
 
       if(!newUser) return res.status(400).json({msg: "Invalid authentication."})
       
-      const user = new Users(newUser)
+      const user = await Users.findOne({account: newUser.account})
+      if(user) return res.status(400).json({msg: "Account already exists."})
+      
+      const new_user = new Users(newUser)
 
-      await user.save()
+      await new_user.save()
 
       res.json({msg: "Account has been activated!"})
       
-    } catch (err) {
-      let errMsg
-
-      if((err as any).code === 11000){
-        errMsg = Object.keys((err as any).keyValue)[0] + " already exists."
-      }else {
-        let name = Object.keys((err as any).errors)[0]
-        errMsg = (err as any).errors[`${name}`].message
-      }
-
-      return res.status(500).json({msg: errMsg})
+    } catch (err: any) {
+      return res.status(500).json({msg: err.message})
     }
   },
   login: async(req: Request, res: Response) => {
@@ -79,7 +73,7 @@ const authCtrl = {
       // if user exists
       loginUser(user, password, res)
 
-    } catch (err) {
+    } catch (err: any) {
       return res.status(500).json({msg: (err as any).message})
     }
   },
@@ -88,7 +82,7 @@ const authCtrl = {
       res.clearCookie('refreshtoken', { path: `/api/refresh_token` })
       return res.json({msg: "Logged out!"})
       
-    } catch (err) {
+    } catch (err: any) {
       return res.status(500).json({msg: (err as any).message})
     }
   },
@@ -107,7 +101,7 @@ const authCtrl = {
 
       res.json({access_token})
       
-    } catch (err) {
+    } catch (err: any) {
       return res.status(500).json({msg: (err as any).message})
     }
   },
