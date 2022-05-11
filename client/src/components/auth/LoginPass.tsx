@@ -52,7 +52,7 @@ const LoginPass = () => {
         </div>
       </div>
 
-      <button type="submit" className="btn btn-dark w-100 1"
+      <button type="submit" className="btn btn-dark w-100 mt-1"
       disabled={(account && password) ? false : true}>
         Login
       </button>

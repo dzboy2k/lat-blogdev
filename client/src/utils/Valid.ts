@@ -1,9 +1,8 @@
-import { Request, Response, NextFunction } from 'express'
+import { IUserRegister } from "./TypeScript"
 
-export const validRegister = async (req: Request, res: Response, next: NextFunction) => {
-  const { name, account, password } = req.body
-
-  const errors = []
+export const validRegister = (userRegister : IUserRegister) => {
+  const { name, account, password, cf_password } = userRegister
+  const errors: string[] = [];
 
   if(!name){
     errors.push("Please add your name.")
@@ -19,14 +18,15 @@ export const validRegister = async (req: Request, res: Response, next: NextFunct
 
   if(password.length < 6){
     errors.push("Password must be at least 6 chars.")
+  }else if(password !== cf_password){
+    errors.push("Confirm password did not match.")
   }
 
-  if(errors.length > 0) return res.status(400).json({msg: errors})
-  
-  next()
+  return {
+    errMsg: errors,
+    errLength: errors.length
+  }
 }
-
-
 
 export function validPhone(phone: string) {
   const re = /^[+]/g

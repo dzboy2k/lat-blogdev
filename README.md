@@ -256,3 +256,15 @@ npm install react-scripts@4.0.3 --save
  bootstrap 5
  toasts
  ```
+
+ ### 11 - React Register
+ ```
+ google console: https://console.cloud.google.com
+  ==> Go to APIs overview
+  APIs & Services => blog-devat => Credentials
+    => BlogDev
+  OAuth consent screen
+    Publishing status -> Testing -> Learn more about publishing status
+      Publishing status -> Testing:
+        Authorizations by a test user will expire seven days from the time of consent. If your OAuth client requests an offline access type and receives a refresh token, that token will also expire.
+ ```
