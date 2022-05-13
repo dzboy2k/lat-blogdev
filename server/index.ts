@@ -30,3 +30,7 @@ const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
   console.log('Server is running on port', PORT)
 })
+
+var path = require('path')
+const dir = path.join(__dirname, 'public')
+app.use(express.static(dir))

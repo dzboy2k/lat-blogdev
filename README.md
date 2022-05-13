@@ -270,3 +270,8 @@ npm install react-scripts@4.0.3 --save
  ```
 
 ### 12 - Active Account
+
+### 13 - Refresh Token
+```
+  Application => Storage => Local Storage => logged
+```
